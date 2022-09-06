@@ -1,7 +1,12 @@
 // import Counter from "./features/counter/Counter";
+import PostsList from "./features/posts/PostsList";
 
 function App() {
-  return <main></main>;
+  return (
+    <main>
+      <PostsList />
+    </main>
+  );
 }
 
 export default App;
