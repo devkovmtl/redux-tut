@@ -3,7 +3,7 @@ import { selectPostById } from "./postsSlice";
 
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
-import ReactionButtons from "./ReactionButtons";
+import ReactionButtons from "./ReactionButton";
 
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
