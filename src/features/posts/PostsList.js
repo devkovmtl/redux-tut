@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectAllPosts,
@@ -9,16 +9,16 @@ import {
 import PostsExcerpt from "./PostsExcerpt";
 
 const PostsList = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
   const postsStatus = useSelector(getPostsStatus);
   const error = useSelector(getPostsErrror);
 
-  useEffect(() => {
-    if (postsStatus === "idle") {
-      dispatch(fetchPosts());
-    }
-  }, [postsStatus, dispatch]);
+  // useEffect(() => {
+  //   if (postsStatus === "idle") {
+  //     dispatch(fetchPosts());
+  //   }
+  // }, [postsStatus, dispatch]);
 
   // const orderedPosts = posts
   //   .slice()
