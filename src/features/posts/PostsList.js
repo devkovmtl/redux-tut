@@ -5,12 +5,14 @@ import {
   getPostsStatus,
   getPostsErrror,
   fetchPosts,
+  selectPostByIds,
 } from "./postsSlice";
 import PostsExcerpt from "./PostsExcerpt";
 
 const PostsList = () => {
   // const dispatch = useDispatch();
-  const posts = useSelector(selectAllPosts);
+  // const posts = useSelector(selectAllPosts);
+  const orderedPostIds = useSelector(selectPostByIds);
   const postsStatus = useSelector(getPostsStatus);
   const error = useSelector(getPostsErrror);
 
@@ -33,11 +35,12 @@ const PostsList = () => {
   if (postsStatus === "loading") {
     content = <p>"Loading..."</p>;
   } else if (postsStatus === "succeeded") {
-    const orderedPosts = posts
-      .slice()
-      .sort((a, b) => b.data.localeCompare(a.data));
-    content = orderedPosts.map((post) => (
-      <PostsExcerpt key={post.id} post={post} />
+    // const orderedPosts = posts
+    //   .slice()
+    //   .sort((a, b) => b.data.localeCompare(a.data));
+
+    content = orderedPostIds.map((postId) => (
+      <PostsExcerpt key={postId.id} post={postId} />
     ));
   } else if (postsStatus === "failed") {
     content = <p>{error}</p>;
