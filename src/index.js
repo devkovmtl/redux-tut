@@ -6,13 +6,14 @@ import "./index.css";
 import App from "./App";
 import { store } from "./app/store";
 import { fetchUsers } from "./features/users/usersSlice";
-import { fetchPosts } from "./features/posts/postsSlice";
+import { extendedApiSlice } from "./features/posts/postsSlice";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // as soon as app start fetch user
 store.dispatch(fetchUsers());
-store.dispatch(fetchPosts());
+// store.dispatch(fetchPosts());
+store.dispatch(extendedApiSlice.endpoints.getPosts.initiate());
 
 root.render(
   <React.StrictMode>
