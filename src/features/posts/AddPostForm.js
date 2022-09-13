@@ -38,11 +38,14 @@ const AddPostForm = () => {
         setTitle("");
         setContent("");
         setUserId("");
-      } catch (error) {
-        console.error("Failed to save the post", error);
-      } finally {
-        setAddRequestStatus("idle");
+      } catch (err) {
+        console.log("Failed to save the post ", err);
       }
+      // } catch (error) {
+      //   console.error("Failed to save the post", error);
+      // } finally {
+      //   setAddRequestStatus("idle");
+      // }
     }
   };
 
